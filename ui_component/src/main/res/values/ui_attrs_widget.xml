@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!--************ UILoadingView ***********-->
+    <declare-styleable name="UILoadingView">
+        <attr name="ui_loading_view_size" format="dimension"/>
+        <attr name="android:color"/>
+    </declare-styleable>
+    <attr name="UILoadingViewStyle" format="reference"/>
+
+
+    <style name="ui.TipDialog" parent="android:Theme.Dialog">
+        <item name="android:windowFrame">@null</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:backgroundDimEnabled">false</item>
+        <item name="android:windowIsFloating">true</item>
+        <item name="android:windowContentOverlay">@null</item>
+    </style>
+
+
+    <!--************ TitleBarLayout ***********-->
+    <declare-styleable name="UITitleBarLayout">
+        <attr name="ui_title_bar_gravity" format="enum">
+            <enum name="left_center" value="19"/>
+            <enum name="center" value="17"/>
+        </attr>
+        <attr name="ui_title_bar_need_separator" format="boolean"/>
+        <attr name="ui_title_bar_separator_color" format="color"/>
+        <attr name="ui_title_bar_separator_height" format="dimension"/>
+        <attr name="ui_title_bar_bg_color" format="color"/>
+        <attr name="ui_title_bar_left_back_drawable_id" format="reference"/>
+        <attr name="ui_title_bar_text_size" format="dimension"/>
+        <attr name="ui_title_bar_text_size_with_subtitle" format="dimension"/>
+        <attr name="ui_title_bar_subtitle_text_size" format="dimension"/>
+        <attr name="ui_title_bar_title_color" format="color"/>
+        <attr name="ui_title_bar_subtitle_color" format="color"/>
+        <attr name="ui_title_bar_margin_horizontal_when_no_btn_aside" format="dimension"/>
+        <attr name="ui_title_bar_container_padding_horizontal" format="dimension"/>
+        <attr name="ui_title_bar_image_btn_width" format="dimension"/>
+        <attr name="ui_title_bar_image_btn_height" format="dimension"/>
+        <attr name="ui_title_bar_text_btn_padding_horizontal" format="dimension"/>
+        <attr name="ui_title_bar_text_btn_color_state_list" format="reference"/>
+        <attr name="ui_title_bar_text_btn_text_size" format="dimension"/>
+    </declare-styleable>
+    <attr name="UITitleBarStyle" format="reference"/>
+</resources>

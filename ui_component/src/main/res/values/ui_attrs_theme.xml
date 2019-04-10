@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <attr name="ui_window_background" format="color|reference"/>
+    <attr name="ui_text_color" format="color"/>
+    <attr name="ui_text_color_primary" format="color"/>
+    <attr name="ui_edit_text_color" format="color"/>
+    <attr name="ui_status_bar_color" format="color"/>
+    <attr name="ui_separator_color" format="color"/>
+
+    <!--***********TitleBar*************-->
+    <attr name="ui_title_bar_height" format="dimension"/>
+    <attr name="ui_title_bar_color" format="color"/>
+
+    <!--**************Layout****************-->
+    <attr name="ui_alpha_pressed" format="float"/>
+    <attr name="ui_alpha_disabled" format="float"/>
+    <attr name="ui_layout_shadow_alpha" format="float"/>
+    <attr name="ui_layout_shadow_elevation" format="dimension"/>
+
+    <!--**************Dialog****************-->
+    <attr name="ui_shape_rectangle_dialog_radius" format="dimension"/>
+    <attr name="ui_shape_rectangle_dialog_solid_color" format="color"/>
+    <attr name="ui_shape_rectangle_dialog_stroke_width" format="dimension"/>
+    <attr name="ui_shape_rectangle_dialog_stroke_color" format="color"/>
+
+
+</resources>

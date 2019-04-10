@@ -1,0 +1,223 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <attr name="ui_bottomDividerHeight" format="dimension" />
+    <attr name="ui_bottomDividerColor" format="color|reference" />
+    <attr name="ui_bottomDividerInsetLeft" format="dimension" />
+    <attr name="ui_bottomDividerInsetRight" format="dimension" />
+    <attr name="ui_topDividerHeight" format="dimension" />
+    <attr name="ui_topDividerColor" format="color|reference" />
+    <attr name="ui_topDividerInsetLeft" format="dimension" />
+    <attr name="ui_topDividerInsetRight" format="dimension" />
+    <attr name="ui_leftDividerWidth" format="dimension" />
+    <attr name="ui_leftDividerColor" format="color|reference" />
+    <attr name="ui_leftDividerInsetTop" format="dimension" />
+    <attr name="ui_leftDividerInsetBottom" format="dimension" />
+    <attr name="ui_rightDividerWidth" format="dimension" />
+    <attr name="ui_rightDividerColor" format="color|reference" />
+    <attr name="ui_rightDividerInsetTop" format="dimension" />
+    <attr name="ui_rightDividerInsetBottom" format="dimension" />
+    <attr name="ui_radius" format="dimension" />
+    <attr name="ui_borderColor" format="color" />
+    <attr name="ui_borderWidth" format="dimension" />
+    <attr name="ui_outerNormalColor" format="color|reference" />
+    <attr name="ui_hideRadiusSide" format="enum">
+        <enum name="none" value="0" />
+        <enum name="top" value="1" />
+        <enum name="right" value="2" />
+        <enum name="bottom" value="3" />
+        <enum name="left" value="4" />
+    </attr>
+    <attr name="ui_showBorderOnlyBeforeL" format="boolean" />
+    <attr name="ui_shadowElevation" format="dimension" />
+    <attr name="ui_useThemeGeneralShadowElevation" format="boolean" />
+    <attr name="ui_shadowAlpha" format="float" />
+    <attr name="ui_outlineInsetTop" format="dimension" />
+    <attr name="ui_outlineInsetLeft" format="dimension" />
+    <attr name="ui_outlineInsetRight" format="dimension" />
+    <attr name="ui_outlineInsetBottom" format="dimension" />
+    <attr name="ui_outlineExcludePadding" format="boolean" />
+
+    <declare-styleable name="UILayout">
+        <attr name="android:maxWidth" />
+        <attr name="android:maxHeight" />
+        <attr name="android:minWidth" />
+        <attr name="android:minHeight" />
+        <attr name="ui_bottomDividerHeight" />
+        <attr name="ui_bottomDividerColor" />
+        <attr name="ui_bottomDividerInsetLeft" />
+        <attr name="ui_bottomDividerInsetRight" />
+        <attr name="ui_topDividerHeight" />
+        <attr name="ui_topDividerColor" />
+        <attr name="ui_topDividerInsetLeft" />
+        <attr name="ui_topDividerInsetRight" />
+        <attr name="ui_leftDividerWidth" />
+        <attr name="ui_leftDividerColor" />
+        <attr name="ui_leftDividerInsetTop" />
+        <attr name="ui_leftDividerInsetBottom" />
+        <attr name="ui_rightDividerWidth" />
+        <attr name="ui_rightDividerColor" />
+        <attr name="ui_rightDividerInsetTop" />
+        <attr name="ui_rightDividerInsetBottom" />
+        <attr name="ui_radius" />
+        <attr name="ui_borderColor" />
+        <attr name="ui_borderWidth" />
+        <attr name="ui_outerNormalColor" />
+        <attr name="ui_hideRadiusSide" />
+        <attr name="ui_showBorderOnlyBeforeL" />
+        <attr name="ui_shadowElevation" />
+        <attr name="ui_useThemeGeneralShadowElevation" />
+        <attr name="ui_shadowAlpha" />
+        <attr name="ui_outlineInsetTop" />
+        <attr name="ui_outlineInsetLeft" />
+        <attr name="ui_outlineInsetRight" />
+        <attr name="ui_outlineInsetBottom" />
+        <attr name="ui_outlineExcludePadding" />
+    </declare-styleable>
+    <declare-styleable name="UIRelativeLayout">
+        <attr name="android:maxWidth" />
+        <attr name="android:maxHeight" />
+        <attr name="android:minWidth" />
+        <attr name="android:minHeight" />
+        <attr name="ui_bottomDividerHeight" />
+        <attr name="ui_bottomDividerColor" />
+        <attr name="ui_bottomDividerInsetLeft" />
+        <attr name="ui_bottomDividerInsetRight" />
+        <attr name="ui_topDividerHeight" />
+        <attr name="ui_topDividerColor" />
+        <attr name="ui_topDividerInsetLeft" />
+        <attr name="ui_topDividerInsetRight" />
+        <attr name="ui_leftDividerWidth" />
+        <attr name="ui_leftDividerColor" />
+        <attr name="ui_leftDividerInsetTop" />
+        <attr name="ui_leftDividerInsetBottom" />
+        <attr name="ui_rightDividerWidth" />
+        <attr name="ui_rightDividerColor" />
+        <attr name="ui_rightDividerInsetTop" />
+        <attr name="ui_rightDividerInsetBottom" />
+        <attr name="ui_radius" />
+        <attr name="ui_borderColor" />
+        <attr name="ui_borderWidth" />
+        <attr name="ui_outerNormalColor" />
+        <attr name="ui_hideRadiusSide" />
+        <attr name="ui_showBorderOnlyBeforeL" />
+        <attr name="ui_shadowElevation" />
+        <attr name="ui_useThemeGeneralShadowElevation" />
+        <attr name="ui_shadowAlpha" />
+        <attr name="ui_outlineInsetTop" />
+        <attr name="ui_outlineInsetLeft" />
+        <attr name="ui_outlineInsetRight" />
+        <attr name="ui_outlineInsetBottom" />
+        <attr name="ui_outlineExcludePadding" />
+    </declare-styleable>
+    <declare-styleable name="UIButton">
+        <attr name="android:maxWidth" />
+        <attr name="android:maxHeight" />
+        <attr name="android:minWidth" />
+        <attr name="android:minHeight" />
+        <attr name="ui_bottomDividerHeight" />
+        <attr name="ui_bottomDividerColor" />
+        <attr name="ui_bottomDividerInsetLeft" />
+        <attr name="ui_bottomDividerInsetRight" />
+        <attr name="ui_topDividerHeight" />
+        <attr name="ui_topDividerColor" />
+        <attr name="ui_topDividerInsetLeft" />
+        <attr name="ui_topDividerInsetRight" />
+        <attr name="ui_leftDividerWidth" />
+        <attr name="ui_leftDividerColor" />
+        <attr name="ui_leftDividerInsetTop" />
+        <attr name="ui_leftDividerInsetBottom" />
+        <attr name="ui_rightDividerWidth" />
+        <attr name="ui_rightDividerColor" />
+        <attr name="ui_rightDividerInsetTop" />
+        <attr name="ui_rightDividerInsetBottom" />
+        <attr name="ui_radius" />
+        <attr name="ui_borderColor" />
+        <attr name="ui_borderWidth" />
+        <attr name="ui_outerNormalColor" />
+        <attr name="ui_hideRadiusSide" />
+        <attr name="ui_showBorderOnlyBeforeL" />
+        <attr name="ui_shadowElevation" />
+        <attr name="ui_useThemeGeneralShadowElevation" />
+        <attr name="ui_shadowAlpha" />
+        <attr name="ui_outlineInsetTop" />
+        <attr name="ui_outlineInsetLeft" />
+        <attr name="ui_outlineInsetRight" />
+        <attr name="ui_outlineInsetBottom" />
+        <attr name="ui_outlineExcludePadding" />
+    </declare-styleable>
+    <declare-styleable name="UILinearLayout">
+        <attr name="android:maxWidth" />
+        <attr name="android:maxHeight" />
+        <attr name="android:minWidth" />
+        <attr name="android:minHeight" />
+        <attr name="ui_bottomDividerHeight" />
+        <attr name="ui_bottomDividerColor" />
+        <attr name="ui_bottomDividerInsetLeft" />
+        <attr name="ui_bottomDividerInsetRight" />
+        <attr name="ui_topDividerHeight" />
+        <attr name="ui_topDividerColor" />
+        <attr name="ui_topDividerInsetLeft" />
+        <attr name="ui_topDividerInsetRight" />
+        <attr name="ui_leftDividerWidth" />
+        <attr name="ui_leftDividerColor" />
+        <attr name="ui_leftDividerInsetTop" />
+        <attr name="ui_leftDividerInsetBottom" />
+        <attr name="ui_rightDividerWidth" />
+        <attr name="ui_rightDividerColor" />
+        <attr name="ui_rightDividerInsetTop" />
+        <attr name="ui_rightDividerInsetBottom" />
+        <attr name="ui_radius" />
+        <attr name="ui_borderColor" />
+        <attr name="ui_borderWidth" />
+        <attr name="ui_outerNormalColor" />
+        <attr name="ui_hideRadiusSide" />
+        <attr name="ui_showBorderOnlyBeforeL" />
+        <attr name="ui_shadowElevation" />
+        <attr name="ui_useThemeGeneralShadowElevation" />
+        <attr name="ui_shadowAlpha" />
+        <attr name="ui_outlineInsetTop" />
+        <attr name="ui_outlineInsetLeft" />
+        <attr name="ui_outlineInsetRight" />
+        <attr name="ui_outlineInsetBottom" />
+        <attr name="ui_outlineExcludePadding" />
+    </declare-styleable>
+
+
+    <declare-styleable name="UIFrameLayout">
+        <attr name="android:maxWidth" />
+        <attr name="android:maxHeight" />
+        <attr name="android:minWidth" />
+        <attr name="android:minHeight" />
+        <attr name="ui_bottomDividerHeight" />
+        <attr name="ui_bottomDividerColor" />
+        <attr name="ui_bottomDividerInsetLeft" />
+        <attr name="ui_bottomDividerInsetRight" />
+        <attr name="ui_topDividerHeight" />
+        <attr name="ui_topDividerColor" />
+        <attr name="ui_topDividerInsetLeft" />
+        <attr name="ui_topDividerInsetRight" />
+        <attr name="ui_leftDividerWidth" />
+        <attr name="ui_leftDividerColor" />
+        <attr name="ui_leftDividerInsetTop" />
+        <attr name="ui_leftDividerInsetBottom" />
+        <attr name="ui_rightDividerWidth" />
+        <attr name="ui_rightDividerColor" />
+        <attr name="ui_rightDividerInsetTop" />
+        <attr name="ui_rightDividerInsetBottom" />
+        <attr name="ui_radius" />
+        <attr name="ui_borderColor" />
+        <attr name="ui_borderWidth" />
+        <attr name="ui_outerNormalColor" />
+        <attr name="ui_hideRadiusSide" />
+        <attr name="ui_showBorderOnlyBeforeL" />
+        <attr name="ui_shadowElevation" />
+        <attr name="ui_useThemeGeneralShadowElevation" />
+        <attr name="ui_shadowAlpha" />
+        <attr name="ui_outlineInsetTop" />
+        <attr name="ui_outlineInsetLeft" />
+        <attr name="ui_outlineInsetRight" />
+        <attr name="ui_outlineInsetBottom" />
+        <attr name="ui_outlineExcludePadding" />
+    </declare-styleable>
+
+</resources>
