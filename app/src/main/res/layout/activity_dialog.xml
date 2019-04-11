@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".DialogActivity">
+
+    <com.hengchang.ui_component.widget.UITitleBarLayout
+        app:ui_title_bar_title_color="@color/ui_color_white"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <com.hengchang.ui_component.widget.round.UIRoundButton
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="10dp"
+        android:layout_margin="10dp"
+        android:text="TipDialog"
+        android:onClick="showTipDialog"
+        android:textColor="@color/ui_color_red"
+        app:ui_backgroundColor="@color/ui_color_white"
+        app:ui_borderWidth="1dp"
+        app:ui_borderColor="@color/ui_color_red"/>
+
+</LinearLayout>

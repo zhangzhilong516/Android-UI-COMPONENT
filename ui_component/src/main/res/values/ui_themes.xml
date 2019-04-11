@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- 关于Theme的继承关系：
+       由于 Theme 需要在不同 API Level 下有不同的配置，并且继承自不同的系统 Theme，所以多层继承。
+
+       继承关系和每个层的分工如下：
+       AppRootTheme（Theme 的最顶层，各个 API Level 自行决定继承自系统的哪个 Theme）
+         |-values
+         |-values-v21
+         |-values-...
+         |
+       AppBaseTheme（基础 Theme，定义所有公用的 style。）
+         |-values
+         |
+       AppConfigTheme（可配置的 Theme，各个 API Level 自行配置各自的 style 差异。）
+         |-values
+         |-values-v21
+         |-values-...
+         |
+       QMUI（QMUI提供的theme控制， 供外界使用）
+
+       So，
+       如果要对某 API Level 配置继承自某个系统的 Theme，在 values-v* 目录下修改 qmui_themes.xml 的 AppRootTheme。
+       如果要对某 API Level 配置定制化的 Theme，在 values-v* 目录下修改 qmui_themes.xml 的 AppConfigTheme。
+       如果在项目中要对特定项目配置业务相关的 Theme，在 values 目录下修改 themes.xml 的 AppTheme。
+        -->
+
+    <!--Theme 的最顶层，各个 API Level 自行决定继承自系统的哪个 Theme-->
+    <style name="AppRootTheme" parent="Theme.AppCompat.Light"/>
+
+
+    <!--基础 Theme，定义所有公用的 style-->
+    <style name="AppBaseTheme" parent="AppRootTheme">
+        <item name="colorPrimary">@color/ui_color_primary</item>  <!--应用的主要色调，actionBar默认使用该颜色，Toolbar导航栏的底色-->
+        <item name="colorPrimaryDark">@color/ui_color_primary_dark</item>  <!--应用的主要暗色调，statusBarColor默认使用该颜色-->
+        <item name="colorAccent">@color/ui_color_accent</item>  <!--一般控件的选中效果默认采用该颜色-->
+
+        <item name="android:windowBackground">?attr/ui_window_background</item>  <!--窗口背景颜色-->
+        <item name="android:textColor">?attr/ui_text_color</item> <!--Button，textView的文字颜色-->
+        <item name="editTextColor">?attr/ui_edit_text_color</item>  <!--默认EditView输入框字体的颜色。-->
+    </style>
+
+
+    <!--可配置的 Theme，各个 API Level 自行配置各自的 style 差异。-->
+    <style name="AppConfigTheme" parent="AppBaseTheme" >
+
+    </style>
+
+
+    <style name="UITheme" parent="AppConfigTheme">
+
+        <item name="ui_text_color_primary">@color/ui_color_75_pure_black</item>
+        <item name="ui_separator_color">@color/ui_color_60_pure_black</item>
+        <item name="ui_title_bar_height">48dp</item>
+        <item name="ui_title_bar_color">@color/ui_color_white</item>
+        <item name="ui_title_bar_margin_horizontal_when_no_btn_aside">15dp</item>
+
+
+        <!--******************Dialog对话框背景设置***********************-->
+        <item name="ui_shape_rectangle_dialog_solid_color">@color/ui_color_75_pure_black</item>
+        <item name="ui_shape_rectangle_dialog_stroke_color">@color/ui_color_red</item>
+        <item name="ui_shape_rectangle_dialog_radius">15dp</item>
+        <item name="ui_shape_rectangle_dialog_stroke_width">1dp</item>
+
+
+        <!--*******************设置View透明度和阴影***********************-->
+        <item name="ui_alpha_pressed">0.5</item>
+        <item name="ui_alpha_disabled">0.5</item>
+        <item name="ui_layout_shadow_alpha">0.25</item>
+        <item name="ui_layout_shadow_elevation">14dp</item>
+
+        <!--**************LoadingView***************-->
+        <item name="UILoadingViewStyle">@style/UITheme.LoadingView</item>
+        <!--**************TitleBarLayout***************-->
+        <item name="UITitleBarStyle">@style/UITheme.TitleBarLayout</item>
+        <!--**************PullRefreshLayout***************-->
+        <item name="UIPullRefreshLayoutStyle">@style/UITheme.PullRefreshLayout</item>
+        <!--**************RoundButton***************-->
+        <item name="UIRoundButtonStyle">@style/UITheme.RoundButton</item>
+
+    </style>
+
+
+    <style name="UITheme.NoActionBar">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+    <style name="UITheme.Compat.NoActionBar" parent="UITheme.NoActionBar"/>
+
+</resources>

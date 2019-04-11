@@ -1,11 +1,54 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".MainActivity">
 
-    <hengchang.com.ui_component.widget.TitleBarLayout
-        android:id="@+id/title_bar"
+
+    <com.hengchang.ui_component.widget.UITitleBarLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
+        android:layout_height="wrap_content"
+        app:ui_title_bar_title_color = "@color/ui_color_white" />
+
+    <com.hengchang.ui_component.layout.UIButton
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:text="UIAdapter"
+        android:onClick="UIAdapter"
+        android:background="@color/ui_color_white"
+        android:textColor="@color/ui_color_black"
+        app:ui_radius="10dp"
+        app:ui_borderWidth="1dp"
+        app:ui_borderColor="@color/ui_color_red" />
+
+    <com.hengchang.ui_component.layout.UIButton
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:text="Dialog"
+        android:textColor="@color/ui_color_white"
+        android:onClick="Dialog"
+        android:background="@color/ui_color_red"
+        app:ui_radius="10dp"
+        app:ui_borderWidth="1dp" />
+
+    <com.hengchang.ui_component.widget.round.UIRoundButton
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:text="BannerView"
+        android:textColor="@color/ui_color_white"
+        android:onClick="BannerView"
+        app:ui_borderColor="@color/ui_color_black"
+        app:ui_backgroundColor="@color/ui_color_red"
+        android:paddingBottom="10dp"
+        android:paddingTop="10dp"
+        app:ui_borderWidth="2dp"
+        app:ui_isRadiusAdjustBounds="true"/>
+
 
 </LinearLayout>

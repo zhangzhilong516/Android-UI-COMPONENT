@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!--**************************Dialog*************************-->
+    <style name="UITheme.Dialog" parent="@android:style/Theme.Dialog">
+        <item name="android:windowFrame">@null</item>      <!-- 边框 -->
+        <item name="android:windowIsFloating">true</item>  <!-- 是否浮现在activity之上 -->
+        <item name="android:windowIsTranslucent">true</item>   <!-- 无标题 -->
+        <item name="windowNoTitle">true</item>
+        <item name="android:windowBackground">@android:color/transparent</item>   <!-- 背景透明 -->
+        <item name="android:windowContentOverlay">@null</item>
+        <item name="android:backgroundDimEnabled">true</item>   <!-- 模糊 -->
+    </style>
+
+    <style name="UITheme.Dialog.NoFrame">
+        <item name="android:backgroundDimEnabled">false</item>
+    </style>
+
+    <!--********************* Loading *********************-->
+    <style name="UITheme.LoadingView">
+        <item name="ui_loading_view_size">?attr/ui_loading_view_size</item>
+        <item name="color">?attr/color</item>
+    </style>
+
+
+    <!--********************* TopBar *********************-->
+    <style name="UITheme.TitleBarLayout">
+        <item name="ui_title_bar_separator_color">?attr/ui_separator_color</item>
+        <item name="ui_title_bar_separator_height">1px</item>
+        <item name="ui_title_bar_bg_color">?attr/ui_title_bar_color</item>
+        <item name="ui_title_bar_need_separator">true</item>
+        <item name="ui_title_bar_left_back_drawable_id">@drawable/ui_icon_title_bar_back</item>
+        <item name="ui_title_bar_gravity">center</item>
+        <item name="android:paddingLeft">4dp</item>
+        <item name="android:paddingRight">4dp</item>
+        <item name="ui_title_bar_title_color">?attr/ui_text_color_primary</item>
+        <item name="ui_title_bar_text_size">17sp</item>
+        <item name="ui_title_bar_text_size_with_subtitle">16sp</item>
+        <item name="ui_title_bar_margin_horizontal_when_no_btn_aside">0dp</item>
+        <item name="ui_title_bar_container_padding_horizontal">8dp</item>
+        <item name="ui_title_bar_subtitle_text_size">11sp</item>
+        <item name="ui_title_bar_subtitle_color">@color/ui_color_15_pure_black</item>
+        <item name="ui_title_bar_image_btn_width">48dp</item>
+        <item name="ui_title_bar_image_btn_height">48dp</item>
+        <item name="ui_title_bar_text_btn_padding_horizontal">12dp</item>
+        <item name="ui_title_bar_text_btn_color_state_list">?attr/ui_text_color_primary</item>
+        <item name="ui_title_bar_text_btn_text_size">16sp</item>
+    </style>
+
+
+    <!-- QMUIPullRefreshLayout -->
+    <style name="UITheme.PullRefreshLayout">
+        <item name="ui_target_init_offset">0dp</item>
+        <item name="ui_target_refresh_offset">72dp</item>
+        <item name="ui_auto_calculate_refresh_init_offset">true</item>
+        <item name="ui_auto_calculate_refresh_end_offset">true</item>
+    </style>
+
+    <!--********************* RoundButton *********************-->
+    <style name="UITheme.RoundButton">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:paddingLeft">0dp</item>
+        <item name="android:paddingRight">0dp</item>
+        <item name="android:paddingTop">0dp</item>
+        <item name="android:paddingBottom">0dp</item>
+        <item name="android:minWidth">0dp</item>
+        <item name="android:minHeight">0dp</item>
+        <item name="android:singleLine">true</item>
+        <item name="android:gravity">center</item>
+        <item name="android:ellipsize">end</item>
+        <item name="ui_isRadiusAdjustBounds">true</item>
+        <item name="ui_backgroundColor">@color/ui_color_transparent</item>
+        <item name="ui_borderWidth">1dp</item>
+        <item name="ui_borderColor">?attr/ui_app_main_color</item>
+    </style>
+
+</resources>
