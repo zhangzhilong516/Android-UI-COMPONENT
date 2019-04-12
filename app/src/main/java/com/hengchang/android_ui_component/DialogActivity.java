@@ -1,10 +1,8 @@
 package com.hengchang.android_ui_component;
 
-import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.view.Gravity;
 import android.view.View;
-import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.hengchang.ui_component.UIActivity;
@@ -51,39 +49,32 @@ public class DialogActivity extends UIActivity {
     }
 
     public void showDialog(View v) {
+
+
         TextView textView = new TextView(this);
         textView.setText("我是一个Dialog");
         textView.setGravity(Gravity.CENTER);
         textView.setBackgroundResource(R.drawable.ui_dialog_bg);
-        new UIAlertDialog.MessageBuilder(this)
-                .setTitle("我是Title")
-                .setMessage("我是Content芭拉芭布拉吧")
-                .setNegativeButton("取消", new DialogInterface.OnClickListener() {
+//        new UIAlertDialog.MessageBuilder(this)
+//                .setTitle("我是Title")
+//                .setMessage("我是Content芭拉芭布拉吧")
+//                .setNegativeButton("取消", new DialogInterface.OnClickListener() {
+//
+//                    @Override
+//                    public void onClick(DialogInterface dialog, int which) {
+//                        dialog.dismiss();
+//                    }
+//                })
+//                .setPositiveButton("确定", new DialogInterface.OnClickListener() {
+//                    @Override
+//                    public void onClick(DialogInterface dialog, int which) {
+//                        dialog.dismiss();
+//                    }
+//                })
+//                .show();
 
-                    @Override
-                    public void onClick(DialogInterface dialog, int which) {
-                        dialog.dismiss();
-                    }
-                })
-                .setPositiveButton("确定", new DialogInterface.OnClickListener() {
-                    @Override
-                    public void onClick(DialogInterface dialog, int which) {
-                        dialog.dismiss();
-                    }
-                })
-                .show();
 
-        new AlertDialog.Builder(this)
-                .setPositiveButton("确定", new DialogInterface.OnClickListener() {
-                    @Override
-                    public void onClick(DialogInterface dialog, int which) {
-
-                    }
-                })
-                .setTitle("我是Title")
-                .setMessage("我是系统Dialog")
-                .create()
-                .show();
+        new UIAlertDialog.Builder(this).setContentView(R.layout.activity_test).show();
     }
 
     @Override

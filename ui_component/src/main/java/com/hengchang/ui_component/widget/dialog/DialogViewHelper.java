@@ -2,14 +2,8 @@ package com.hengchang.ui_component.widget.dialog;
 
 import android.content.Context;
 import android.util.SparseArray;
-import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
-import android.view.ViewGroup;
-import android.view.WindowManager;
-import android.widget.FrameLayout;
-import android.widget.LinearLayout;
-import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.hengchang.ui_component.R;
@@ -47,6 +41,7 @@ class DialogViewHelper {
      */
     public void setContentView(View contentView) {
         this.mContentView = contentView;
+        mContentView.setMinimumWidth(UIResHelper.getAttrDimen(contentView.getContext(), R.attr.ui_dialog_min_width));
     }
 
     /**
