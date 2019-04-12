@@ -51,19 +51,33 @@ public class BannerActivity extends UIActivity {
     @Override
     public void initData() {
 
-
         List<String> data = new ArrayList<>();
         for (int i = 0; i < 100; i++) {
             data.add("这是第" + i + "条数据");
         }
-        mLoadRefreshRecyclerView.setAdapter(new UIRecyclerAdapter<String>(this,data,R.layout.recycler_item) {
+//        mLoadRefreshRecyclerView.setAdapter(new UIRecyclerAdapter<String>(this, data, R.layout.recycler_item) {
+//            @Override
+//            public void convert(UIRecyclerViewHolder holder, String item) {
+//                holder.setText(R.id.text_view, item);
+//            }
+//
+//        });
+        mLoadRefreshRecyclerView.setAdapter(new UIRecyclerAdapter<String>(this,data) {
             @Override
-            public void convert(UIRecyclerViewHolder holder, String item) {
-                holder.setText(R.id.text_view,item);
+            public void convert(UIRecyclerViewHolder holder, String item, int position) {
+                if(getItemViewType(position) == R.layout.recycler_item){
+                    holder.setText(R.id.text_view,item);
+                }
             }
 
+            @Override
+            public int getLayoutId(String item, int position) {
+                if(position % 2 == 0){
+                    return R.layout.activity_main;
+                }
+                return R.layout.recycler_item;
+            }
         });
-
         UIBannerView bannerView = new UIBannerView(this);
         RecyclerView.LayoutParams bannerViewParams = new RecyclerView.LayoutParams(RecyclerView.LayoutParams.MATCH_PARENT,
                 UIDisplayHelper.dp2px(200));

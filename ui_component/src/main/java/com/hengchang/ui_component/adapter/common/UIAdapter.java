@@ -19,12 +19,9 @@ public abstract class UIAdapter<T> extends BaseAdapter {
 
     protected List<T> mData;
 
-    protected int mLayoutId;
-
-    public UIAdapter(Context context, int layoutId, List<T> data) {
+    public UIAdapter(Context context, List<T> data) {
         this.context = context;
         this.mData = data;
-        this.mLayoutId = layoutId;
     }
 
     @Override
@@ -45,12 +42,18 @@ public abstract class UIAdapter<T> extends BaseAdapter {
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
 
-        UIViewHolder viewHolder = UIViewHolder.getHolder(context, convertView, mLayoutId);
+        UIViewHolder viewHolder = UIViewHolder.getHolder(context, convertView, getItemViewType(position));
 
         convert(viewHolder, mData.get(position), position);
 
         return viewHolder.getConvertView();
     }
+
+    @Override
+    public int getItemViewType(int position) {
+        return getLayoutId(mData.get(position),position);
+    }
+
 
     public void setData(List<T> list) {
         mData = (list != null) ? list : new ArrayList<T>();
@@ -85,4 +88,5 @@ public abstract class UIAdapter<T> extends BaseAdapter {
     }
 
     public abstract void convert(UIViewHolder viewHolder, T t, int position);
+    protected abstract int getLayoutId(T item,int position);
 }

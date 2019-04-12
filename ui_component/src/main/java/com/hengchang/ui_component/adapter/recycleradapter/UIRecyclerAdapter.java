@@ -8,6 +8,7 @@ import android.view.ViewGroup;
 import java.util.ArrayList;
 import java.util.List;
 
+import com.hengchang.ui_component.R;
 import com.hengchang.ui_component.adapter.OnItemClickListener;
 import com.hengchang.ui_component.adapter.OnLongClickListener;
 
@@ -24,45 +25,22 @@ public abstract class UIRecyclerAdapter<T> extends RecyclerView.Adapter<UIRecycl
     protected LayoutInflater mInflater;
     protected List<T> mData;
 
-    private int mLayoutId;
-
-    // 多布局支持
-    private UIMultiTypeSupport mMultiTypeSupport;
-
-    public UIRecyclerAdapter(Context context, List<T> data, int layoutId) {
+    public UIRecyclerAdapter(Context context, List<T> data) {
         this.mContext = context;
         this.mInflater = LayoutInflater.from(mContext);
         this.mData = data;
-        this.mLayoutId = layoutId;
     }
 
-    /**
-     * 多布局支持
-     */
-    public UIRecyclerAdapter(Context context, List<T> data, UIMultiTypeSupport<T> multiTypeSupport) {
-        this(context, data, -1);
-        this.mMultiTypeSupport = multiTypeSupport;
-    }
 
-    /**
-     * 根据当前位置获取不同的viewType
-     */
     @Override
     public int getItemViewType(int position) {
-        if (mMultiTypeSupport != null) {
-            return mMultiTypeSupport.getLayoutId(mData.get(position), position);
-        }
-        return super.getItemViewType(position);
+        return getLayoutId(mData.get(position),position);
     }
 
     @Override
     public UIRecyclerViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-        // 多布局支持
-        if (mMultiTypeSupport != null) {
-            mLayoutId = viewType;
-        }
 
-        View itemView = mInflater.inflate(mLayoutId, parent, false);
+        View itemView = mInflater.inflate(viewType, parent, false);
 
         UIRecyclerViewHolder holder = new UIRecyclerViewHolder(itemView);
         return holder;
@@ -88,11 +66,12 @@ public abstract class UIRecyclerAdapter<T> extends RecyclerView.Adapter<UIRecycl
             });
         }
 
-        convert(holder, mData.get(position));
+        convert(holder, mData.get(position),position);
     }
 
 
-    public abstract void convert(UIRecyclerViewHolder holder, T item);
+    public abstract void convert(UIRecyclerViewHolder holder, T item,int position);
+    public abstract int getLayoutId(T item, int position);
 
 
     @Override

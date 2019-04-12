@@ -1,5 +1,6 @@
 package com.hengchang.android_ui_component;
 
+import android.app.ListActivity;
 import android.view.View;
 
 import com.hengchang.ui_component.UIActivity;

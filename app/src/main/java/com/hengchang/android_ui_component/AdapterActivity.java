@@ -61,10 +61,15 @@ public class AdapterActivity extends UIActivity {
         for (int i = 0; i < 100; i++) {
             data.add("这是第" + i + "条数据");
         }
-        recyclerView.setAdapter(new UIRecyclerAdapter<String>(this,data,R.layout.recycler_item) {
+        recyclerView.setAdapter(new UIRecyclerAdapter<String>(this,data) {
             @Override
-            public void convert(UIRecyclerViewHolder holder, String item) {
+            public void convert(UIRecyclerViewHolder holder, String item, int position) {
                 holder.setText(R.id.text_view,item);
+            }
+
+            @Override
+            public int getLayoutId(String item, int position) {
+                return R.layout.recycler_item;
             }
 
         });
