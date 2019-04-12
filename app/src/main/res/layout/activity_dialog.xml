@@ -8,7 +8,6 @@
     tools:context=".DialogActivity">
 
     <com.hengchang.ui_component.widget.UITitleBarLayout
-        app:ui_title_bar_title_color="@color/ui_color_white"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
 
@@ -19,6 +18,20 @@
         android:layout_margin="10dp"
         android:text="TipDialog"
         android:onClick="showTipDialog"
+        android:textColor="@color/ui_color_red"
+        app:ui_backgroundColor="@color/ui_color_white"
+        app:ui_borderWidth="1dp"
+        app:ui_borderColor="@color/ui_color_red"/>
+
+
+
+    <com.hengchang.ui_component.widget.round.UIRoundButton
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="10dp"
+        android:layout_margin="10dp"
+        android:text="showDialog"
+        android:onClick="showDialog"
         android:textColor="@color/ui_color_red"
         app:ui_backgroundColor="@color/ui_color_white"
         app:ui_borderWidth="1dp"

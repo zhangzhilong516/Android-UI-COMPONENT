@@ -2,9 +2,18 @@ package com.hengchang.ui_component.widget.dialog;
 
 import android.content.Context;
 import android.util.SparseArray;
+import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
+import android.view.ViewGroup;
+import android.view.WindowManager;
+import android.widget.FrameLayout;
+import android.widget.LinearLayout;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
+
+import com.hengchang.ui_component.R;
+import com.hengchang.ui_component.utils.UIResHelper;
 
 import java.lang.ref.WeakReference;
 
@@ -22,6 +31,8 @@ class DialogViewHelper {
     public DialogViewHelper(Context context, int layoutResId) {
         this();
         mContentView = LayoutInflater.from(context).inflate(layoutResId, null);
+        mContentView.setMinimumWidth(UIResHelper.getAttrDimen(context, R.attr.ui_dialog_min_width));
+
     }
 
 
@@ -84,8 +95,6 @@ class DialogViewHelper {
 
     /**
      * 获取ContentView
-     *
-     * @return
      */
     public View getContentView() {
         return mContentView;

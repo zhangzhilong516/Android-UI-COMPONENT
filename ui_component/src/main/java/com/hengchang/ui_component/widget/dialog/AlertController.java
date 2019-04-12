@@ -8,6 +8,11 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.view.Window;
 import android.view.WindowManager;
+import android.widget.LinearLayout;
+
+import com.hengchang.ui_component.R;
+import com.hengchang.ui_component.utils.UIDisplayHelper;
+import com.hengchang.ui_component.utils.UIResHelper;
 
 /**
  * @author zhangzhilong
@@ -32,9 +37,6 @@ class AlertController {
 
     /**
      * 设置文本
-     *
-     * @param viewId
-     * @param text
      */
     public void setText(int viewId, CharSequence text) {
         mViewHelper.setText(viewId, text);
@@ -46,18 +48,18 @@ class AlertController {
 
     /**
      * 设置点击事件
-     *
-     * @param viewId
-     * @param listener
      */
-    public void setOnclickListener(int viewId, View.OnClickListener listener) {
-        mViewHelper.setOnclickListener(viewId, listener);
+    public void setOnclickListener(int viewId, final DialogInterface.OnClickListener listener) {
+        mViewHelper.setOnclickListener(viewId, new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                listener.onClick(mDialog,v.getId());
+            }
+        });
     }
 
     /**
      * 获取Dialog
-     *
-     * @return
      */
     public UIAlertDialog getDialog() {
         return mDialog;
@@ -87,10 +89,11 @@ class AlertController {
         public View mView;
         // 布局layout id
         public int mViewLayoutResId;
+
         // 存放字体的修改
         public SparseArray<CharSequence> mTextArray = new SparseArray<>();
         // 存放点击事件
-        public SparseArray<View.OnClickListener> mClickArray = new SparseArray<>();
+        public SparseArray<DialogInterface.OnClickListener> mClickArray = new SparseArray<>();
         // 宽度
         public int mWidth = ViewGroup.LayoutParams.WRAP_CONTENT;
         // 动画
@@ -107,14 +110,11 @@ class AlertController {
 
         /**
          * 绑定和设置参数
-         *
-         * @param mAlert
          */
         public void apply(AlertController mAlert) {
-            // 完善这个地方 设置参数
 
-            // 1. 设置Dialog布局  DialogViewHelper
             DialogViewHelper viewHelper = null;
+
             if (mViewLayoutResId != 0) {
                 viewHelper = new DialogViewHelper(mContext, mViewLayoutResId);
             }
@@ -124,41 +124,34 @@ class AlertController {
                 viewHelper.setContentView(mView);
             }
 
-            if (viewHelper == null) {
-                throw new IllegalArgumentException("请设置布局setContentView()");
-            }
 
-            // 给Dialog 设置布局
+            if (viewHelper == null) {
+                throw new IllegalArgumentException("please setContentView()");
+            }
             mAlert.getDialog().setContentView(viewHelper.getContentView());
 
-            // 设置 Controller的辅助类
             mAlert.setViewHelper(viewHelper);
 
-            // 2.设置文本
+
             int textArraySize = mTextArray.size();
             for (int i = 0; i < textArraySize; i++) {
                 mAlert.setText(mTextArray.keyAt(i), mTextArray.valueAt(i));
             }
 
 
-            // 3.设置点击
             int clickArraySize = mClickArray.size();
             for (int i = 0; i < clickArraySize; i++) {
                 mAlert.setOnclickListener(mClickArray.keyAt(i), mClickArray.valueAt(i));
             }
 
-            // 4.配置自定义的效果  全屏  从底部弹出    默认动画
             Window window = mAlert.getWindow();
-            // 设置位置
             window.setGravity(mGravity);
 
-            // 设置动画
             if (mAnimations != 0) {
                 window.setWindowAnimations(mAnimations);
             }
-
-            // 设置宽高
             WindowManager.LayoutParams params = window.getAttributes();
+
             params.width = mWidth;
             params.height = mHeight;
             window.setAttributes(params);

@@ -135,7 +135,7 @@ public class UITitleBarLayout extends RelativeLayout {
         mTitleTextSize = array.getDimensionPixelSize(R.styleable.UITitleBarLayout_ui_title_bar_text_size, UIDisplayHelper.sp2px(context, 17));
         mTitleTextSizeWithSubTitle = array.getDimensionPixelSize(R.styleable.UITitleBarLayout_ui_title_bar_text_size_with_subtitle, UIDisplayHelper.sp2px(context, 16));
         mSubTitleTextSize = array.getDimensionPixelSize(R.styleable.UITitleBarLayout_ui_title_bar_subtitle_text_size, UIDisplayHelper.sp2px(context, 11));
-        mTitleTextColor = array.getColor(R.styleable.UITitleBarLayout_ui_title_bar_title_color, UIResHelper.getAttrColor(context, R.attr.ui_text_color_primary));
+        mTitleTextColor = array.getColor(R.styleable.UITitleBarLayout_ui_title_bar_title_text_color, UIResHelper.getAttrColor(context, R.attr.ui_text_color_primary));
         mSubTitleTextColor = array.getColor(R.styleable.UITitleBarLayout_ui_title_bar_subtitle_color, UIResHelper.getAttrColor(context, R.attr.ui_text_color_primary));
         mTitleMarginHorWhenNoBtnAside = array.getDimensionPixelSize(R.styleable.UITitleBarLayout_ui_title_bar_margin_horizontal_when_no_btn_aside, 0);
         mTitleContainerPaddingHor = array.getDimensionPixelSize(R.styleable.UITitleBarLayout_ui_title_bar_container_padding_horizontal, 0);

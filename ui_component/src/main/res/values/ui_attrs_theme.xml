@@ -11,6 +11,7 @@
     <!--***********TitleBar*************-->
     <attr name="ui_title_bar_height" format="dimension"/>
     <attr name="ui_title_bar_color" format="color"/>
+    <attr name="ui_title_bar_text_color" format="color"/>
 
     <!--**************Layout****************-->
     <attr name="ui_alpha_pressed" format="float"/>
@@ -19,10 +20,21 @@
     <attr name="ui_layout_shadow_elevation" format="dimension"/>
 
     <!--**************Dialog****************-->
-    <attr name="ui_shape_rectangle_dialog_radius" format="dimension"/>
-    <attr name="ui_shape_rectangle_dialog_solid_color" format="color"/>
-    <attr name="ui_shape_rectangle_dialog_stroke_width" format="dimension"/>
-    <attr name="ui_shape_rectangle_dialog_stroke_color" format="color"/>
+    <attr name="ui_dialog_min_width" format="dimension"/>
+    <attr name="ui_dialog_max_width" format="dimension"/>
+    <attr name="ui_dialog_padding_left" format="dimension"/>
+    <attr name="ui_dialog_padding_right" format="dimension"/>
+    <attr name="ui_dialog_padding_top" format="dimension"/>
+    <attr name="ui_dialog_padding_bottom" format="dimension"/>
+    <attr name="ui_dialog_background_dim_amount" format="float"/>
+
+    <attr name="ui_dialog_radius" format="dimension"/>
+    <attr name="ui_dialog_solid_color" format="color"/>
+    <attr name="ui_dialog_stroke_width" format="dimension"/>
+    <attr name="ui_dialog_stroke_color" format="color"/>
+
+    <attr name="ui_tip_dialog_bg" format="reference"/>
+
 
     <!--**************RoundButton****************-->
     <attr name="ui_round_btn_border_width" format="dimension"/>

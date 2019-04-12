@@ -16,10 +16,10 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
         <activity android:name=".DialogActivity" />
         <activity android:name=".AdapterActivity" />
-        <activity android:name=".BannerActivity"></activity>
+        <activity android:name=".BannerActivity" />
+        <activity android:name=".LayoutActivity"></activity>
     </application>
 
 </manifest>

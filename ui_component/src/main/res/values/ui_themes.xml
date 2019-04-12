@@ -57,10 +57,19 @@
 
 
         <!--******************Dialog对话框背景设置***********************-->
-        <item name="ui_shape_rectangle_dialog_solid_color">@color/ui_color_75_pure_black</item>
-        <item name="ui_shape_rectangle_dialog_stroke_color">@color/ui_color_red</item>
-        <item name="ui_shape_rectangle_dialog_radius">15dp</item>
-        <item name="ui_shape_rectangle_dialog_stroke_width">1dp</item>
+        <item name="ui_dialog_solid_color">@color/ui_color_white</item>
+        <item name="ui_dialog_stroke_color">@color/ui_color_75_pure_black</item>
+        <item name="ui_dialog_radius">5dp</item>
+        <item name="ui_dialog_stroke_width">0dp</item>
+        <item name="ui_dialog_padding_left">20dp</item>
+        <item name="ui_dialog_padding_right">20dp</item>
+        <item name="ui_dialog_padding_top">20dp</item>
+        <item name="ui_dialog_padding_bottom">20dp</item>
+        <item name="ui_dialog_min_width">260dp</item>
+        <item name="ui_dialog_max_width">304dp</item>
+        <item name="ui_dialog_background_dim_amount">0.6</item>
+
+        <item name="ui_tip_dialog_bg">@drawable/ui_tip_dialog_bg</item>
 
 
         <!--*******************设置View透明度和阴影***********************-->

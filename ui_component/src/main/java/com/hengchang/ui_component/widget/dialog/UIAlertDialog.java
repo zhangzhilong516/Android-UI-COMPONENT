@@ -2,6 +2,7 @@ package com.hengchang.ui_component.widget.dialog;
 
 import android.app.Dialog;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.view.Gravity;
 import android.view.View;
 import android.view.ViewGroup;
@@ -15,7 +16,7 @@ import com.hengchang.ui_component.R;
  * @date 2018/7/28
  * Description: 自定义万能Dialog
  */
-public class UIAlertDialog extends Dialog {
+public class UIAlertDialog extends Dialog implements DialogInterface{
 
     private AlertController mAlert;
 
@@ -32,7 +33,7 @@ public class UIAlertDialog extends Dialog {
      * @param text
      */
     public void setText(int viewId, CharSequence text) {
-        mAlert.setText(viewId,text);
+        mAlert.setText(viewId, text);
     }
 
     public <T extends View> T getView(int viewId) {
@@ -45,14 +46,14 @@ public class UIAlertDialog extends Dialog {
      * @param viewId
      * @param listener
      */
-    public void setOnclickListener(int viewId, View.OnClickListener listener) {
-        mAlert.setOnclickListener(viewId,listener);
+    public void setOnclickListener(int viewId, DialogInterface.OnClickListener listener) {
+        mAlert.setOnclickListener(viewId, listener);
     }
 
 
     public static class Builder {
 
-        private final AlertController.AlertParams P;
+        final AlertController.AlertParams P;
 
         /**
          * Creates a builder for an alert dialog that uses the default alert
@@ -128,30 +129,31 @@ public class UIAlertDialog extends Dialog {
         }
 
         // 设置文本
-        public Builder setText(int viewId,CharSequence text){
-            P.mTextArray.put(viewId,text);
+        public Builder setText(int viewId, CharSequence text) {
+            P.mTextArray.put(viewId, text);
             return this;
         }
 
         // 设置点击事件
-        public Builder setOnClickListener(int view , View.OnClickListener listener){
-            P.mClickArray.put(view,listener);
+        public Builder setOnClickListener(int view, DialogInterface.OnClickListener listener) {
+            P.mClickArray.put(view, listener);
             return this;
         }
 
         // 配置一些万能的参数
-        public Builder fullWidth(){
+        public Builder fullWidth() {
             P.mWidth = ViewGroup.LayoutParams.MATCH_PARENT;
             return this;
         }
 
         /**
          * 从底部弹出
+         *
          * @param isAnimation 是否有动画
          * @return
          */
-        public Builder formBottom(boolean isAnimation){
-            if(isAnimation){
+        public Builder formBottom(boolean isAnimation) {
+            if (isAnimation) {
                 P.mAnimations = R.style.dialog_from_bottom_anim;
             }
             P.mGravity = Gravity.BOTTOM;
@@ -161,11 +163,12 @@ public class UIAlertDialog extends Dialog {
 
         /**
          * 设置Dialog的宽高
+         *
          * @param width
          * @param height
          * @return
          */
-        public Builder setWidthAndHeight(int width, int height){
+        public Builder setWidthAndHeight(int width, int height) {
             P.mWidth = width;
             P.mHeight = height;
             return this;
@@ -173,19 +176,21 @@ public class UIAlertDialog extends Dialog {
 
         /**
          * 添加默认动画
+         *
          * @return
          */
-        public Builder addDefaultAnimation(){
+        public Builder addDefaultAnimation() {
             P.mAnimations = R.style.dialog_scale_anim;
             return this;
         }
 
         /**
          * 设置动画
+         *
          * @param styleAnimation
          * @return
          */
-        public Builder setAnimations(int styleAnimation){
+        public Builder setAnimations(int styleAnimation) {
             P.mAnimations = styleAnimation;
             return this;
         }
@@ -208,10 +213,10 @@ public class UIAlertDialog extends Dialog {
          * If you are interested in listening for all cases where the dialog is dismissed
          * and not just when it is canceled, see
          * {@link #setOnDismissListener(OnDismissListener) setOnDismissListener}.</p>
-         * @see #setCancelable(boolean)
-         * @see #setOnDismissListener(OnDismissListener)
          *
          * @return This Builder object to allow for chaining of calls to set methods
+         * @see #setCancelable(boolean)
+         * @see #setOnDismissListener(OnDismissListener)
          */
         public Builder setOnCancelListener(OnCancelListener onCancelListener) {
             P.mOnCancelListener = onCancelListener;
@@ -278,6 +283,46 @@ public class UIAlertDialog extends Dialog {
             final UIAlertDialog dialog = create();
             dialog.show();
             return dialog;
+        }
+    }
+
+    public static class MessageBuilder extends Builder {
+
+        public MessageBuilder(Context context) {
+            super(context);
+            setContentView(R.layout.ui_message_dialog_layout);
+        }
+
+        public MessageBuilder setMessage(int strRes) {
+            setText(R.id.tv_message_content, P.mContext.getText(strRes));
+            return this;
+        }
+
+        public MessageBuilder setMessage(CharSequence charSequence) {
+            setText(R.id.tv_message_content, charSequence);
+            return this;
+        }
+
+        public MessageBuilder setTitle(CharSequence charSequence) {
+            setText(R.id.tv_message_title, charSequence);
+            return this;
+        }
+
+        public MessageBuilder setTitle(int strRes) {
+            setText(R.id.tv_message_title, P.mContext.getText(strRes));
+            return this;
+        }
+
+        public MessageBuilder setNegativeButton(CharSequence charSequence, DialogInterface.OnClickListener onClickListener) {
+            setOnClickListener(R.id.btn_negative, onClickListener);
+            setText(R.id.btn_negative, charSequence);
+            return this;
+        }
+
+        public MessageBuilder setPositiveButton(CharSequence charSequence, DialogInterface.OnClickListener onClickListener) {
+            setOnClickListener(R.id.btn_positive, onClickListener);
+            setText(R.id.btn_positive, charSequence);
+            return this;
         }
     }
 }

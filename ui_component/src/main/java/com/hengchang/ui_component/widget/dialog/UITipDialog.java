@@ -57,7 +57,6 @@ public class UITipDialog extends Dialog {
 
     public UITipDialog(Context context, int themeResId) {
         super(context, themeResId);
-        setCanceledOnTouchOutside(false);
     }
 
     @Override
@@ -116,6 +115,8 @@ public class UITipDialog extends Dialog {
 
         private CharSequence mTipWord;
 
+        private boolean cancel;
+
         public Builder(Context context) {
             mContext = context;
         }
@@ -138,6 +139,16 @@ public class UITipDialog extends Dialog {
             return this;
         }
 
+        /**
+         * 设置显示的文案
+         */
+        public Builder setCanceledOnTouchOutside(boolean cancel) {
+            cancel = cancel;
+            return this;
+        }
+
+
+
         public UITipDialog create(){
             return create(true);
         }
@@ -151,8 +162,9 @@ public class UITipDialog extends Dialog {
         public UITipDialog create(boolean cancelable) {
             UITipDialog dialog = new UITipDialog(mContext);
             dialog.setCancelable(cancelable);
+            dialog.setCanceledOnTouchOutside(cancel);
             dialog.setContentView(R.layout.ui_tip_dialog_layout);
-            ViewGroup contentWrap = (ViewGroup) dialog.findViewById(R.id.contentWrap);
+            ViewGroup contentWrap = dialog.findViewById(R.id.contentWrap);
 
             if (mCurrentIconType == ICON_TYPE_LOADING) {
                 UILoadingView loadingView = new UILoadingView(mContext);
@@ -226,7 +238,7 @@ public class UITipDialog extends Dialog {
         public UITipDialog create() {
             UITipDialog dialog = new UITipDialog(mContext);
             dialog.setContentView(R.layout.ui_tip_dialog_layout);
-            ViewGroup contentWrap = (ViewGroup) dialog.findViewById(R.id.contentWrap);
+            ViewGroup contentWrap = dialog.findViewById(R.id.contentWrap);
             LayoutInflater.from(mContext).inflate(mContentLayoutId, contentWrap, true);
             return dialog;
         }
